@@ -1,6 +1,7 @@
 import React from 'react';
 import {Formik, Form, Field, ErrorMessage} from 'formik';
 import * as Yup from 'yup';
+import {Prompt} from "react-router-dom";
 
 export default function UsersForm(props){
 
@@ -19,7 +20,9 @@ export default function UsersForm(props){
     initialValues= {props.values} 
     onSubmit = {props.onSubmit}
     >
-        {props =>  <Form >
+        {props =>  <Form>
+            
+        <Prompt when ={props.dirty} message = 'sure?'></Prompt>
 
         <label>Name </label><br/>
         <Field name = "name"/>

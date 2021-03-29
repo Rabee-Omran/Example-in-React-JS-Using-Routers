@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import {addUser} from '../Api/Users';
 import UsersForm from '../components/UserForm';
+
+
+
+
 export default class CreateUserPage extends Component{
 
 
@@ -25,6 +29,7 @@ export default class CreateUserPage extends Component{
 
         return <div>
                     <h3>User</h3>
+                    
                     <UsersForm values = {this.state.user} onSubmit = {this.addUser}/>
 
                     
