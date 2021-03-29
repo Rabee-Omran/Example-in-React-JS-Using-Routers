@@ -15,7 +15,9 @@ export default class UserPage extends Component{
           this.setState({
               user : response.data
           })
-      })
+      }).catch(
+        ()=>{alert('an error ')
+      });
       }
       
 render (){

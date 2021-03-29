@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {BrowserRouter, Route , Link } from "react-router-dom";
 import UsersPage from './Pages/UsersPage';
 import UserPage from './Pages/UserPage';
+import EditUserPage from './Pages/EditUserPage';
 
 const HomePage = () => <div>Home</div>
 const AboutPage = () => <div>About</div>
@@ -24,8 +25,9 @@ class App extends Component{
         <Route path= "/" exact component={HomePage} />
         <Route path= "/users" exact component={UsersPage} />
         <Route path= "/about"  component={AboutPage} />
-        <Route path= "/users/:id"  component={UserPage} />
-
+        <Route path= "/users/:id"  exact component={UserPage} />
+        <Route path= "/users/edit/:id"  component={EditUserPage} />
+        
 
 
       </div>

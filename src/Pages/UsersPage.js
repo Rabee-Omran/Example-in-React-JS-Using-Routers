@@ -26,8 +26,9 @@ render (){
                     <ul>
                         {this.state.users.map(user => 
                             <li key = {user.id}>
-                            {user.name} 
-                            <Link to ={ '/users/'+user.id} >view</Link>
+                            {user.name} {'  '}
+                            <Link to ={ '/users/'+user.id} >View</Link>  {'  '}
+                            <Link to ={ '/users/edit/'+user.id} >Edit</Link>  {'  '}
                            
                             </li>
                         )}
