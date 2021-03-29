@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {getUser} from '../Api/Users';
-import {ViewUser} from '../components/ViewUser';
+import ViewUser from '../components/ViewUser';
 export default class UserPage extends Component{
 
 
