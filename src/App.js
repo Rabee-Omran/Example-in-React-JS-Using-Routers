@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {BrowserRouter, Route , Link, Switch } from "react-router-dom";
+import {BrowserRouter, Route , NavLink, Switch } from "react-router-dom";
 import UsersPage from './Pages/UsersPage';
 import UserPage from './Pages/UserPage';
 import CreateUserPage from './Pages/CreateUserPage';
@@ -8,6 +8,10 @@ import EditUserPage from './Pages/EditUserPage';
 const HomePage = () => <div>Home</div>
 const AboutPage = () => <div>About</div>
 
+
+const MyNavLink = props => {
+ return<NavLink exact activeClassName='active' {...props}>{props.children}</NavLink> 
+}
 
 class App extends Component{  
 
@@ -18,12 +22,12 @@ class App extends Component{
     <BrowserRouter>
 
       <div>
-        <Link to ='/'>Home</Link> {"  "}
-        <Link to ='/users'>Users</Link>{"  "}
-        <Link to ='/about'>About</Link>{"  "}
-        <Link to ='/users/create'>Create User</Link>{"  "}
+        <MyNavLink to ='/' >Home</MyNavLink>{"  "}
+        <MyNavLink to ='/users'  >Users</MyNavLink>{"  "}
+        <MyNavLink to ='/about'>About</MyNavLink>{"  "}
+        <MyNavLink to ='/users/create' >Create User</MyNavLink>{"  "}
 
-        {/* switch for display only one page -- oreder is important */}
+        {/* switch for display only one page -- order is important */}
         <Switch>
         <Route path= "/" exact component={HomePage} />
         <Route path= "/users" exact component={UsersPage} />
